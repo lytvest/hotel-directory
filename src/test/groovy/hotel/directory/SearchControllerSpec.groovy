@@ -11,8 +11,5 @@ class SearchControllerSpec extends Specification implements ControllerUnitTest<S
     def cleanup() {
     }
 
-    void "test something"() {
-        expect:"fix me"
-            true == false
-    }
+
 }

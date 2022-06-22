@@ -11,8 +11,5 @@ class CountrySpec extends Specification implements DomainUnitTest<Country> {
     def cleanup() {
     }
 
-    void "test something"() {
-        expect:"fix me"
-            true == false
-    }
+
 }

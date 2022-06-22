@@ -20,6 +20,7 @@ class BootStrap {
         createHotels(countries)
 
     }
+
     @Transactional
     void createHotels(countries){
         def labels = ["на", "бо", "ве", "фи", "гу", "ме", "ту", "ке"]
@@ -38,6 +39,7 @@ class BootStrap {
             ).save()
         }
     }
+
     def destroy = {
     }
 }

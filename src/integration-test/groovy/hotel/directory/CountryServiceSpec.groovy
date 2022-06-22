@@ -13,14 +13,14 @@ class CountryServiceSpec extends Specification {
     SessionFactory sessionFactory
 
     private Long setupData() {
-        // TODO: Populate valid domain instances and return a valid ID
-        //new Country(...).save(flush: true, failOnError: true)
-        //new Country(...).save(flush: true, failOnError: true)
-        //Country country = new Country(...).save(flush: true, failOnError: true)
-        //new Country(...).save(flush: true, failOnError: true)
-        //new Country(...).save(flush: true, failOnError: true)
-        assert false, "TODO: Provide a setupData() implementation for this generated test suite"
-        //country.id
+        def c1 = new Country(name: "Poccия1", capital: "Москва").save(flush: true)
+        def c2 = new Country(name: "Нидерланды2", capital: "Амстердам").save(flush: true)
+        def c3 = new Country(name: "Андорра3", capital: "Андорра-ла-Велья").save(flush: true, failOnError: true)
+        def c4 = new Country(name: "Греция4", capital: "Афины").save(flush: true)
+        def c5 = new Country(name: "Сербия5", capital: "Белград").save(flush: true)
+        def c6 = new Country(name: "Германия6", capital: "Берлин").save(flush: true)
+
+        c3.id
     }
 
     void "test get"() {
@@ -38,34 +38,35 @@ class CountryServiceSpec extends Specification {
 
         then:
         countryList.size() == 2
-        assert false, "TODO: Verify the correct instances are returned"
+        countryList[0].name == "Андорра"
+        countryList[1].name == "Греция"
     }
 
     void "test count"() {
         setupData()
 
         expect:
-        countryService.count() == 5
+        countryService.count() == 6 + 9
     }
 
     void "test delete"() {
         Long countryId = setupData()
 
         expect:
-        countryService.count() == 5
+        countryService.count() == 6 + 9
 
         when:
         countryService.delete(countryId)
         sessionFactory.currentSession.flush()
 
         then:
-        countryService.count() == 4
+        countryService.count() == 5 + 9
     }
 
     void "test save"() {
         when:
-        assert false, "TODO: Provide a valid instance to save"
-        Country country = new Country()
+
+        Country country = new Country(name: "Словакия1", capital: "Братислава")
         countryService.save(country)
 
         then:

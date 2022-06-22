@@ -11,8 +11,5 @@ class HotelSpec extends Specification implements DomainUnitTest<Hotel> {
     def cleanup() {
     }
 
-    void "test something"() {
-        expect:"fix me"
-            true == false
-    }
+
 }
