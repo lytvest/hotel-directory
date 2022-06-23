@@ -1,7 +1,5 @@
 <g:hiddenField name="version" value="${hotel?.version}" />
-%{--<fieldset class="form">--}%
-%{--    <f:all bean="country"/>--}%
-%{--</fieldset>--}%
+
 <div class="mb-3 mt-3 row ">
     <label for="name" class="col-sm-2 col-form-label">Название</label>
     <div class="col-sm-9">
