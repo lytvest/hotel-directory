@@ -1,13 +1,13 @@
 package hotel.directory
 
-class Country {
+class Project {
     String name
-    String capital
-    static hasMany = [hotels: Hotel]
+    String comment
+    static hasMany = [hotels: Task]
 
 
     static constraints = {
         name size:0..255, blank:false, unique:true
-        capital size:0..128, blank:false
+        comment size:0..1000, blank:false
     }
 }

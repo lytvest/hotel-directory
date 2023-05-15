@@ -2,17 +2,22 @@ package hotel.directory
 
 class SearchController {
 
-    def index(Integer countryId, String search) {
-        if (countryId == null)
+    def index(Integer projectId, String search) {
+        if (projectId == null) {
+            redirect(controller: 'project', action: 'index')
             return
-        def country = Country.get(countryId)
-        def list = Hotel.findAllByCountryAndNameIlike(country, "%$search%",
+        }
+        if(!search) {
+            search = ""
+        }
+        def project = Project.get(projectId)
+        def list = Task.findAllByProjectAndNameIlike(project, "%$search%",
                 [
-                        sort: [stars:'desc', name:'asc'],
+                        sort: [name:'asc'],
                         max: Math.min(params.max as Integer ?: 10, 100),
-                        offset: params.offset ?: 0
+                        offset: params?.offset ?: 0
                 ])
-        def count = Hotel.countByCountryAndNameIlike(country, "%$search%")
-        [hotelList:list, hotelCount: count]
+        def count = Task.countByProjectAndNameIlike(project, "%$search%")
+        [taskList:list, taskCount: count]
     }
 }

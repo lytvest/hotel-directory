@@ -7,18 +7,18 @@ import org.hibernate.SessionFactory
 
 @Integration
 @Rollback
-class CountryServiceSpec extends Specification {
+class ProjectServiceSpec extends Specification {
 
     CountryService countryService
     SessionFactory sessionFactory
 
     private Long setupData() {
-        def c1 = new Country(name: "Poccия1", capital: "Москва").save(flush: true)
-        def c2 = new Country(name: "Нидерланды2", capital: "Амстердам").save(flush: true)
-        def c3 = new Country(name: "Андорра3", capital: "Андорра-ла-Велья").save(flush: true, failOnError: true)
-        def c4 = new Country(name: "Греция4", capital: "Афины").save(flush: true)
-        def c5 = new Country(name: "Сербия5", capital: "Белград").save(flush: true)
-        def c6 = new Country(name: "Германия6", capital: "Берлин").save(flush: true)
+        def c1 = new Project(name: "Poccия1", comment: "Москва").save(flush: true)
+        def c2 = new Project(name: "Нидерланды2", comment: "Амстердам").save(flush: true)
+        def c3 = new Project(name: "Андорра3", comment: "Андорра-ла-Велья").save(flush: true, failOnError: true)
+        def c4 = new Project(name: "Греция4", comment: "Афины").save(flush: true)
+        def c5 = new Project(name: "Сербия5", comment: "Белград").save(flush: true)
+        def c6 = new Project(name: "Германия6", comment: "Берлин").save(flush: true)
 
         c3.id
     }
@@ -34,7 +34,7 @@ class CountryServiceSpec extends Specification {
         setupData()
 
         when:
-        List<Country> countryList = countryService.list(max: 2, offset: 2)
+        List<Project> countryList = countryService.list(max: 2, offset: 2)
 
         then:
         countryList.size() == 2
@@ -66,7 +66,7 @@ class CountryServiceSpec extends Specification {
     void "test save"() {
         when:
 
-        Country country = new Country(name: "Словакия1", capital: "Братислава")
+        Project country = new Project(name: "Словакия1", comment: "Братислава")
         countryService.save(country)
 
         then:

@@ -2,17 +2,17 @@ package hotel.directory
 
 import grails.gorm.services.Service
 
-@Service(Country)
+@Service(Project)
 interface CountryService {
 
-    Country get(Serializable id)
+    Project get(Serializable id)
 
-    List<Country> list(Map args)
+    List<Project> list(Map args)
 
     Long count()
 
     void delete(Serializable id)
 
-    Country save(Country country)
+    Project save(Project country)
 
 }

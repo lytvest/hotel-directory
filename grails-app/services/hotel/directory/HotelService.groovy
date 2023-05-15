@@ -2,17 +2,17 @@ package hotel.directory
 
 import grails.gorm.services.Service
 
-@Service(Hotel)
+@Service(Task)
 interface HotelService {
 
-    Hotel get(Serializable id)
+    Task get(Serializable id)
 
-    List<Hotel> list(Map args)
+    List<Task> list(Map args)
 
     Long count()
 
     void delete(Serializable id)
 
-    Hotel save(Hotel hotel)
+    Task save(Task hotel)
 
 }

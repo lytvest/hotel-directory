@@ -25,13 +25,16 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
                 <li class="nav-item ">
-                    <g:link controller="search" class="nav-link p-2 pl-3 pr-3" >Поиск</g:link>
+                    <g:link controller="search" class="nav-link p-2 pl-3 pr-3" >Главная</g:link>
                 </li>
                 <li class="nav-item ">
-                    <g:link controller="country" class="nav-link  p-2 pl-3 pr-3">Страны</g:link>
+                    <g:link controller="project" class="nav-link  p-2 pl-3 pr-3">Проекты</g:link>
                 </li>
                 <li class="nav-item ">
-                    <g:link controller="hotel" class="nav-link  p-2 pl-3 pr-3">Отели</g:link>
+                    <g:link controller="task" class="nav-link  p-2 pl-3 pr-3">Задачи</g:link>
+                </li>
+                <li class="nav-item ">
+                    <g:link controller="stats" class="nav-link  p-2 pl-3 pr-3">Отчеты</g:link>
                 </li>
             </ul>
         </div>

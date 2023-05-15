@@ -7,7 +7,7 @@ import org.hibernate.SessionFactory
 
 @Integration
 @Rollback
-class HotelServiceSpec extends Specification {
+class TaskServiceSpec extends Specification {
 
     HotelService hotelService
     SessionFactory sessionFactory
@@ -27,7 +27,7 @@ class HotelServiceSpec extends Specification {
         setupData()
 
         when:
-        List<Hotel> hotelList = hotelService.list(max: 2, offset: 2)
+        List<Task> hotelList = hotelService.list(max: 2, offset: 2)
 
         then:
         hotelList.size() == 2

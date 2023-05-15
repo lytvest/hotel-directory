@@ -2,20 +2,18 @@
 <html>
 <head>
     <meta name="layout" content="main"/>
-    <title>Редактировать отель</title>
+    <title>Добавить страну</title>
 </head>
 
 <body>
-
-<div id="edit-hotel" class="content scaffold-edit" role="main">
-    <h1>Редактировать отель</h1>
+<div id="create-country" class="content scaffold-create" role="main">
+    <h1>Добавить проект</h1>
     <g:if test="${flash.message}">
         <div class="message" role="status">${flash.message}</div>
     </g:if>
-    <% hotel?.attach() %>
-    <g:hasErrors bean="${hotel}">
+    <g:hasErrors bean="${this.project}">
         <ul class="errors" role="alert">
-            <g:eachError bean="${hotel}" var="error">
+            <g:eachError bean="${this.project}" var="error">
                 <li <g:if test="${error in org.springframework.validation.FieldError}">data-field-id="${error.field}"</g:if>><g:message
                         error="${error}"/></li>
             </g:eachError>
@@ -23,9 +21,8 @@
     </g:hasErrors>
     <div class="card m-3">
         <div class="card-body">
-            <g:form resource="${hotel}" method="PUT">
-                <g:render template="hotel_form"
-                          model="[hotel: hotel, countryList: countryList, country: hotel.country]"/>
+            <g:form resource="${this.project}" method="POST">
+                <g:render template="country_form" model="[project: this.project]"/>
             </g:form>
         </div>
     </div>
