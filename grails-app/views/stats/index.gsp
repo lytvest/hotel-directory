@@ -15,10 +15,32 @@
 <body>
 
 <div id="list-hotel" class="content scaffold-list" role="main">
-    <h1>Отчеты</h1>
+
     <g:if test="${flash.message}">
         <div class="message" role="status">${flash.message}</div>
     </g:if>
+
+    <div class="container">
+        <nav class="navbar navbar-light ">
+            <div class="container">
+
+
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex flex-row">
+                    <li class="nav-item ">
+                        <div class="nav-link p-2 pl-3 pr-3" style="color: darkred; font-weight: bold">Отчеты</div>
+                    </li>
+                    <li class="nav-item ">
+                        <g:link controller="stats" class="nav-link p-2 pl-3 pr-3" >Разработчики</g:link>
+                    </li>
+                    <li class="nav-item ">
+                        <g:link controller="stats" action="testers" class="nav-link  p-2 pl-3 pr-3">Тестировщики</g:link>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+    </div>
+
     <div class="card">
         <div class="card-body">
             <div class="container border border-info p-2 d-flex m-1 row">

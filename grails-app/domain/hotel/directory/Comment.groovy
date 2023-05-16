@@ -1,12 +1,13 @@
 package hotel.directory
 
 import java.time.LocalDate
+import java.time.LocalDateTime
 
 class Comment {
 
     String text
     String author
-    LocalDate date = LocalDate.now()
+    LocalDateTime date = LocalDateTime.now()
     Task task
 
     static constraints = {

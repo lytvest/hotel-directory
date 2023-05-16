@@ -12,7 +12,7 @@
     <g:if test="${flash.message}">
         <div class="message" role="status">${flash.message}</div>
     </g:if>
-    <% hotel?.attach() %>
+    <% task?.attach() %>
     <g:hasErrors bean="${task}">
         <ul class="errors" role="alert">
             <g:eachError bean="${task}" var="error">

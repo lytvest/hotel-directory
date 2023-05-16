@@ -98,7 +98,7 @@
 <div class="mb-3 row">
     <label for="text" class="col-sm-2 col-form-label">Задание</label>
     <div class="col-sm-9">
-        <textarea type="text" class="form-control" id="text" name="text" >${task?.text}</textarea>
+        <textarea required type="text" class="form-control" id="text" name="text" >${task?.text}</textarea>
     </div>
 </div>
 <div class="mb-3 row">

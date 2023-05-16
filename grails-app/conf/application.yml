@@ -103,6 +103,7 @@ dataSource:
     driverClassName: org.h2.Driver
     username: sa
     password: ''
+    logSql: true
 
 environments:
     development:
@@ -137,4 +138,4 @@ environments:
                 defaultTransactionIsolation: 2 # TRANSACTION_READ_COMMITTED
 ---
 server:
-    port: 8081
+    port: 8082

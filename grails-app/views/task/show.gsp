@@ -98,10 +98,10 @@
                 </g:form>
             </div>
 
-            <g:if test="${task.comments}">
+            <g:if test="${task.comments }">
                 <div class="row d-flex justify-content-center container">
 
-                    <g:each in="${task.comments}" var="comment">
+                    <g:each in="${task.comments.sort { it.date }}" var="comment">
                         <div class="col-12 card mb-4">
                             <div class="card-body">
                                 <p>${comment.text}</p>
@@ -116,7 +116,7 @@
                                     </div>
 
                                     <div class="d-flex flex-row align-items-center">
-                                        <p class="small text-muted mb-0">${comment.date}</p>
+                                        <p class="small text-muted mb-0">${hotel.directory.Application.date(comment.date)}</p>
                                         <i class="far fa-thumbs-up mx-2 fa-xs text-black"
                                            style="margin-top: -0.16rem;"></i>
                                     </div>
@@ -131,17 +131,22 @@
                 <div>Комментарии отсутствуют</div>
             </g:else>
 
-            <g:form resource="${comment}" method="POST">
+            <form action="/comment/save" method="post">
+
                 <div class="row d-flex">
                     <input name="task" type="hidden" value="${task.id}">
                     <input id="add-comment" class="form-control m-1 col-10" name="text" type="text"
                            placeholder="Введите комментарий...">
-                    <input type="submit" class="btn btn-primary m-1 col-1 ml-auto" value="Добавить">
-                </div>
-            </g:form>
+                    <input type="submit" class="btn btn-primary m-1 ml-auto" style="width: 14%" value="Добавить">
+                    <g:select class="form-select form-control m-1" name="author"
+                              from="${hotel.directory.User.list()}"
+                              value="${task?.tester?.id}"
+                              optionValue="${{it.name}}"
+                              optionKey="name" />
+                </div></form>
+            </div>
         </div>
-    </div>
 
-</div>
-</body>
-</html>
+    </div>
+    </body>
+    </html>
