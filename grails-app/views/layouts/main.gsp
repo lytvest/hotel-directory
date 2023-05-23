@@ -44,8 +44,13 @@
     <g:layoutBody/>
 </div>
 
-<div class="row mt-4" role="contentinfo">
-
+<div class="row mt-4 mb-5" role="contentinfo">
+    <div class="m-auto">
+    Разработчики:
+    Башкирцев Д. М.
+    Имранова Д. Т.
+    Ивт-20-1
+    </div>
 </div>
 
 
